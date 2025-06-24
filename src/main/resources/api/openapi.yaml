@@ -412,7 +412,7 @@ components:
           maxLength: 2
         zip:
           type: string
-          pattern: '^\\d{5}(-\\d{4})?$'
+          pattern: '^\d{5}(-\d{4})?$'
         created_at:
           type: integer
           description: Creation timestamp in milliseconds since epoch
@@ -445,7 +445,7 @@ components:
           maxLength: 2
         zip:
           type: string
-          pattern: '^\\d{5}(-\\d{4})?$'
+          pattern: '^\d{5}(-\d{4})?$'
       required:
         - street_line_one
         - city
