@@ -4,7 +4,7 @@ To be frank I am not a fan of "GenAI". The term is bloated and hyped to shit.
 The impact it has on our environment is disgraceful. Yet just like plastic bags
 companies are pushing this too. The implications this hype bubble
 will have on the global economy is disastrous when it pops. Overall, it is a
-net negative for our trust in information and ability to learn. The exploration
+net negative for our trust in information and ability to learn. The exploitation
 of women with it is sickening. Granted that is more a societal issue. We should
 be better people.
 
