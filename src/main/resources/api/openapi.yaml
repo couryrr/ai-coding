@@ -240,7 +240,7 @@ components:
           description: Customer's birthdate as Unix timestamp in milliseconds
         phone:
           type: string
-          pattern: '^\\d{3}-\\d{3}-\\d{5}$'
+          pattern: '^\d{3}-\d{3}-\d{4}$'
         created_at:
           type: integer
           description: Creation timestamp in milliseconds since epoch
@@ -274,7 +274,7 @@ components:
           description: Customer's birthdate as Unix timestamp in milliseconds
         phone:
           type: string
-          pattern: '^\\d{3}-\\d{3}-\\d{5}$'
+          pattern: '^\d{3}-\d{3}-\d{4}$'
       required:
         - first_name
         - last_name
@@ -295,7 +295,7 @@ components:
           description: Customer's birthdate as Unix timestamp in milliseconds
         phone:
           type: string
-          pattern: '^\\d{3}-\\d{3}-\\d{5}$'
+          pattern: '^\d{3}-\d{3}-\d{4}$'
 
     Purchase:
       type: object
