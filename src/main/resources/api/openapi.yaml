@@ -236,17 +236,17 @@ components:
           type: string
           minLength: 1
         birthdate:
-          type: string
-          format: date-time
+          type: integer
+          description: Customer's birthdate as Unix timestamp in milliseconds
         phone:
           type: string
           pattern: '^\\d{3}-\\d{3}-\\d{5}$'
         created_at:
-          type: string
-          format: date-time
+          type: integer
+          description: Creation timestamp in milliseconds since epoch
         updated_at:
-          type: string
-          format: date-time
+          type: integer
+          description: Last update timestamp in milliseconds since epoch
         purchases:
           type: array
           items:
@@ -270,8 +270,8 @@ components:
           type: string
           minLength: 1
         birthdate:
-          type: string
-          format: date-time
+          type: integer
+          description: Customer's birthdate as Unix timestamp in milliseconds
         phone:
           type: string
           pattern: '^\\d{3}-\\d{3}-\\d{5}$'
@@ -291,8 +291,8 @@ components:
           type: string
           minLength: 1
         birthdate:
-          type: string
-          format: date-time
+          type: integer
+          description: Customer's birthdate as Unix timestamp in milliseconds
         phone:
           type: string
           pattern: '^\\d{3}-\\d{3}-\\d{5}$'
@@ -311,11 +311,11 @@ components:
         ship_to:
           $ref: '#/components/schemas/Address'
         created_at:
-          type: string
-          format: date-time
+          type: integer
+          description: Creation timestamp in milliseconds since epoch
         updated_at:
-          type: string
-          format: date-time
+          type: integer
+          description: Last update timestamp in milliseconds since epoch
       required:
         - id
         - item
@@ -365,11 +365,11 @@ components:
           type: number
           minimum: 0
         created_at:
-          type: string
-          format: date-time
+          type: integer
+          description: Creation timestamp in milliseconds since epoch
         updated_at:
-          type: string
-          format: date-time
+          type: integer
+          description: Last update timestamp in milliseconds since epoch
       required:
         - id
         - name
@@ -414,11 +414,11 @@ components:
           type: string
           pattern: '^\\d{5}(-\\d{4})?$'
         created_at:
-          type: string
-          format: date-time
+          type: integer
+          description: Creation timestamp in milliseconds since epoch
         updated_at:
-          type: string
-          format: date-time
+          type: integer
+          description: Last update timestamp in milliseconds since epoch
       required:
         - id
         - street_line_one

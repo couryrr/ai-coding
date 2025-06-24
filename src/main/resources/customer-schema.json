@@ -18,23 +18,20 @@
       "minLength": 1
     },
     "birthdate": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Customer's date and time of birth"
+      "type": "integer",
+      "description": "Customer's birthdate as Unix timestamp in milliseconds"
     },
     "phone": {
       "type": "string",
       "pattern": "^\\d{3}-\\d{3}-\\d{5}$"
     },
     "created_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Timestamp when the customer record was created"
+      "type": "integer",
+      "description": "Creation timestamp in milliseconds since epoch"
     },
     "updated_at": {
-      "type": "string",
-      "format": "date-time",
-      "description": "Timestamp when the customer record was last updated"
+      "type": "integer",
+      "description": "Last update timestamp in milliseconds since epoch"
     },
     "purchases": {
       "type": "array",
@@ -63,14 +60,12 @@
           "$ref": "#/definitions/Address"
         },
         "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Timestamp when the purchase was created"
+          "type": "integer",
+          "description": "Creation timestamp in milliseconds since epoch"
         },
         "updated_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Timestamp when the purchase was last updated"
+          "type": "integer",
+          "description": "Last update timestamp in milliseconds since epoch"
         }
       },
       "required": ["id", "item", "quantity", "ship_to", "created_at", "updated_at"]
@@ -94,14 +89,12 @@
           "minimum": 0
         },
         "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Timestamp when the item was created"
+          "type": "integer",
+          "description": "Creation timestamp in milliseconds since epoch"
         },
         "updated_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Timestamp when the item was last updated"
+          "type": "integer",
+          "description": "Last update timestamp in milliseconds since epoch"
         }
       },
       "required": ["id", "name", "price", "created_at", "updated_at"]
@@ -134,14 +127,12 @@
           "pattern": "^\\d{5}(-\\d{4})?$"
         },
         "created_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Timestamp when the address was created"
+          "type": "integer",
+          "description": "Creation timestamp in milliseconds since epoch"
         },
         "updated_at": {
-          "type": "string",
-          "format": "date-time",
-          "description": "Timestamp when the address was last updated"
+          "type": "integer",
+          "description": "Last update timestamp in milliseconds since epoch"
         }
       },
       "required": ["id", "street_line_one", "city", "state", "zip", "created_at", "updated_at"]
