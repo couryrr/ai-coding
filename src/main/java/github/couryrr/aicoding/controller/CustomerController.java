@@ -7,6 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.time.Instant;
 import java.util.*;
@@ -20,17 +22,22 @@ public class CustomerController implements DefaultApi {
 
     @Override
     public ResponseEntity<Customer> customersPost(CustomerCreate customerCreate) {
-        Customer customer = new Customer()
-            .id(UUID.randomUUID())
-            .firstName(customerCreate.getFirstName())
-            .lastName(customerCreate.getLastName())
-            .birthdate(customerCreate.getBirthdate())
-            .phone(customerCreate.getPhone())
-            .createdAt((int) Instant.now().toEpochMilli())
-            .updatedAt((int) Instant.now().toEpochMilli());
+        try {
+            Customer customer = new Customer()
+                .id(UUID.randomUUID())
+                .firstName(customerCreate.getFirstName())
+                .lastName(customerCreate.getLastName())
+                .birthdate(customerCreate.getBirthdate())
+                .phone(customerCreate.getPhone())
+                .createdAt((int) Instant.now().toEpochMilli())
+                .updatedAt((int) Instant.now().toEpochMilli());
 
-        customers.put(customer.getId(), customer);
-        return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+            customers.put(customer.getId(), customer);
+            return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+        } catch (Exception e) {
+            log.error("Failed to create customer", e);
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
+        }
     }
 
     @Override
@@ -197,6 +204,15 @@ public class CustomerController implements DefaultApi {
 
         return purchase.map(ResponseEntity::ok)
             .orElse(ResponseEntity.notFound().build());
+    }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<github.couryrr.aicoding.model.Error> handleResponseStatusException(ResponseStatusException ex) {
+        return ResponseEntity
+                .status(ex.getStatusCode())
+                .body(new github.couryrr.aicoding.model.Error()
+                        .code("VALIDATION_ERROR")
+                        .message(ex.getReason()));
     }
 
     @Override
