@@ -1,0 +1,22 @@
+[{
+    "id": "b06a0ce1-bc73-4f47-9aa4-cc938f5e6f18",
+    "first_name": "Jim",
+    "last_name": "Boo",
+    "age": 22,
+    "phone": "555-123-45678",
+    "purchases": [{
+        "id": "b06a0ce1-bc73-4f47-9aa4-cc938f5e6f18",
+        "name":"",
+        "description":"",
+        "price": 5500,
+        "quantity": 1,
+        "ship_to": {
+            "id": "b06a0ce1-bc73-4f47-9aa4-cc938f5e6f18",
+            "street_line_one":"",
+            "street_line_two":"",
+            "city":"",
+            "state":"",
+            "zip": "12345-xxxx"
+        }
+    }]
+}]
