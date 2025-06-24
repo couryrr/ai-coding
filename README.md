@@ -15,19 +15,19 @@ workflow or I can disprove the hype.
 
 ## Goal
 
-Using /data provide examples.
-Build out specs for json schema and openapi specs.
-Generate the code
-Build out the logic.
-Add in observability.
+- Using /data provide examples.
+- Build out specs for json schema and openapi specs.
+- Generate the code
+- Build out the logic.
+- Add in observability.
 
-Testing and CI/CD
+- Testing and CI/CD
 
-Breaking change idea is to move it to a multi-project module system.
-Add in a protobuffs for a persistence service.
-Add Docker.
+- Breaking change idea is to move it to a multi-project module system.
+- Add in a protobuffs for a persistence service.
+- Add Docker.
 
-Bring in golang for a TUI using the protobuff.
+- Bring in golang for a TUI using the protobuff.
 
 Seems like an average work project.
 
